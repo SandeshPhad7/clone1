@@ -1,6 +1,5 @@
 <?php
-$link=new mysqli('localhost','root','','laundry');
-
+include('dbcon.php');
 $id=$_GET['id'];
 $check=mysqli_query($link,"SELECT L_status from user_view where cid='$id'");
 $arr=mysqli_fetch_array($check);

@@ -1,6 +1,5 @@
 <?php
-$link=new mysqli('localhost','root','','laundry');
-
+include('dbcon.php');
 $id=$_GET['id'];
 
 $delete=mysqli_query($link,"DELETE from customer where cid='$id'");

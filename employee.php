@@ -1,9 +1,14 @@
+<?php
+include('dbcon.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-dByWAgbS_9OR_-I5F3lv3mzrobuutzXElQ&usqp=CAU" type="image/icon type">
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,27 +18,7 @@
     <title>Employee</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="dashboard.php">Admin panel</a>
-          <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon">me-auto</span>
-          </button> -->
-          <!-- <div class="collapse navbar-collapse" id="navbarText"> -->
-            <ul class="navbar-nav  mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="customer.php">Customer</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Employee</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="bill.php">Bill</a>
-              </li>
-            </ul>
-          <!-- </div> -->
-        </div>
-      </nav>
+<?php include('navbar.php'); ?>
 
       <div class="container" style="margin:20px;">
         <form method="post" action="">
@@ -47,7 +32,7 @@
           <div class="row mb-3">
             <label for="inputEmail3" class="col-sm-2 col-form-label">Phone No.</label>
             <div class="col-sm-10">
-              <input name="phone" type="text" class="form-control" id="inputEmail3" />
+              <input name="phone" type="text" maxlength="10" class="form-control" id="inputEmail3" />
             </div>
           </div>
           <div class="row mb-3">
@@ -90,7 +75,6 @@
 
 
 <?php
-$link=new mysqli('localhost','root','','laundry');
 
 if(isset($_POST['submit'])){
 $employee=mysqli_query($link,"INSERT INTO `employee`(`eid`, `name`, `phone`, `address`, `salary`, `gender`, `age`) 
@@ -105,7 +89,7 @@ window.location.href='employee.php';
 
 
 
-echo "<table class='table table-dark'>
+echo "<table class='table table-dark container '>
 <tr>
 <th scope='col'>Name</th>
 <th scope='col'>Phone No.</th>
@@ -113,8 +97,9 @@ echo "<table class='table table-dark'>
 <th scope='col'>Salary</th>
 <th scope='col'>Gender </th>
 <th scope='col'>Age</th>
-<th scope='col'></th>
-<th scope='col'></th>
+<th scope='col'>Edit</th>
+<th scope='col'>Delete</th>
+
 </tr>";
 $emp=mysqli_query($link,"SELECT * from employee");
 
@@ -138,5 +123,7 @@ while($row=mysqli_fetch_array($emp)){
 
 
 ?>
+<?php include('footer.php'); ?>
+
 </body>
 </html>
