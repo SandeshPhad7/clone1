@@ -21,7 +21,7 @@
 
 ## Tools
 - PHP
-- MyDQL
+- MySQL
 - XAMPP
 - HTML
 - Javascript
