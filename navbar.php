@@ -47,12 +47,7 @@ if(empty($_SESSION['user'])){
             <button class="logout-btn nav-link" style="color:red;" type="submit" name="logout">Logout</button>
           </form>
         </li>
-          <li class="ser nav-item">
-          <form class="" method="post" action="">
-              <input class="" type="search" name="val" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success " name="search" type="submit">Search</button>
-          </form> 
-          </li>
+          
       
         </ul>
         <!-- </div> -->
