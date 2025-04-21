@@ -56,36 +56,7 @@ if(empty($_SESSION['user'])){
     </nav> 
     <?php
 
-if(isset($_POST['search'])){
-  include('dbcon.php');
-  $qry = mysqli_query($link,"CALL `get_search`('$_POST[val]')");
-  while($roww=mysqli_fetch_array($qry)){
-    $cid=$roww['cid'];
-    $coupan=$roww['coupan'];
-    $cname=$roww['cname'];
-    $phone=$roww['phone'];
-    $address=$roww['address'];
-    $t_amount=$roww['t_amount'];
-  }
-  echo "<table class='table navtable table-dark'>
-      <tr>
-      <th scope='col'>CID</th>
-      <th scope='col'>Coupan #</th>
-      <th scope='col'>Name</th>
-      <th scope='col'>Phone</th>
-      <th scope='col'>Address</th>
-      <th scope='col'>Total price</th>
-      </tr>";
 
-      echo "<tr>";
-      echo "<td>"; echo $cid;echo "</td>";
-      echo "<td>"; echo $coupan;echo "</td>";
-      echo "<td>"; echo $cname;echo "</td>";
-      echo "<td>"; echo $phone;echo "</td>";
-      echo "<td>"; echo $address;echo "</td>";
-      echo "<td>"; echo $t_amount;echo "</td>";
-      echo "</tr>";
-}
 
 
 ?>
