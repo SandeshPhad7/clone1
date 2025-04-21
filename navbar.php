@@ -55,24 +55,9 @@ if(empty($_SESSION['user'])){
       
     </nav> 
     <?php
-
-
-
-
 ?>
     <style>
-      .ser input{
-        outline: none;
-        border: none;
-        padding: 4px;
-        border-radius: 5px;
-        margin: 0 5px;
-      }
-      .ser form{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
+      
       .navtable{
         position: absolute;
         top: 8%;
@@ -84,14 +69,25 @@ if(empty($_SESSION['user'])){
       table{
         box-shadow: 0 5px 7px 5px  #444;
       }
-      .logout-btn{
-        position: relative;
-        background: transparent;
-        border: none;
-        outline: none;
-        color: red;
+      .logout-btn {
+      position: relative;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: red; /* Apply red color */
+      font-size: 16px; /* Set the font size */
+      padding: 6px 12px; /* Add some padding for better spacing */
+      border-radius: 5px; /* Optional: add rounded corners */
+      cursor: pointer; /* Change the cursor to pointer on hover */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
       }
-   
+      /* Optional: Add some margin to the button */
+
+/* Optional: Add hover effect for the logout button */
+      .logout-btn:hover {
+          background-color: rgba(255, 0, 0, 0.1); /* Light red background on hover */
+          color: darkred; /* Change text color on hover */
+      }
 
     </style>
 </body>
